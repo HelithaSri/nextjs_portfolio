@@ -6,7 +6,7 @@ const nextConfig = {
     // comment on these lines before running locally
     // output: 'export',
     // basePath: '/_next',
-    assetPrefix: isProd ? 'nextjs_portfolio/' : '',
+    assetPrefix: isProd ? '/nextjs_portfolio/' : '',
 
 }
 
