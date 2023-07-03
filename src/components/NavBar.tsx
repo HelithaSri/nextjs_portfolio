@@ -4,6 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+};
+
 const NavBar = () => {
   return (
     <div className="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50">
@@ -16,7 +36,7 @@ const NavBar = () => {
           {
             <Image
               className="relative"
-              src="./assets/images/hs_logo.png"
+              src="/assets/images/hs_logo.png"
               alt="Next.js Logo"
               width={80}
               height={50}
@@ -88,14 +108,14 @@ const NavBar = () => {
             </Link>
           </ul>
           <a href="/assets/images/logo.png" target="_blank">
-          <motion.button
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="px-4 py-2 rounded-md text-textGreen text=[13px] border border-textGreen hover:bg-hoverColor duration-300"
-          >
-            Resume
-          </motion.button>
+            <motion.button
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="px-4 py-2 rounded-md text-textGreen text=[13px] border border-textGreen hover:bg-hoverColor duration-300"
+            >
+              Resume
+            </motion.button>
           </a>
         </div>
       </div>
