@@ -4,7 +4,7 @@ const isProd = true;
 
 const nextConfig = {
     // comment on these lines before running locally
-    output: 'export',
+    output: isProd ? 'export' : '',
     assetPrefix: isProd ? '/nextjs_portfolio/' : '',
 }
 

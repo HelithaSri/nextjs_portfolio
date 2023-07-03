@@ -11,17 +11,17 @@ const container = {
     scale: 1,
     transition: {
       delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 const item = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
-    opacity: 1
-  }
+    opacity: 1,
+  },
 };
 
 const NavBar = () => {
@@ -45,15 +45,21 @@ const NavBar = () => {
           }
         </motion.div>
         <div className="hidden mdl:inline-flex item-center gap-7">
-          <ul className="flex text[13px] gap-7">
+          <motion.ul
+            className="flex text[13px] gap-7"
+            variants={container}
+            initial="hidden"
+            animate="visible"
+          >
             <Link
               href="#home"
               className="flex items-center gap-1 font-medium cursor-pointer duration-100"
             >
               <motion.li
-                initial={{ y: -10, opacity: 0 }}
+                /* initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.3 }} */
+                variants={item}
               >
                 Home
               </motion.li>
@@ -63,9 +69,10 @@ const NavBar = () => {
               className="flex items-center gap-1 font-medium cursor-pointer duration-100"
             >
               <motion.li
-                initial={{ y: -10, opacity: 0 }}
+                /* initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3 }}
+                transition={{ duration: 0.3 }} */
+                variants={item}
               >
                 About
               </motion.li>
@@ -75,9 +82,10 @@ const NavBar = () => {
               className="flex items-center gap-1 font-medium cursor-pointer duration-100"
             >
               <motion.li
-                initial={{ y: -10, opacity: 0 }}
+                /* initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5 }} */
+                variants={item}
               >
                 Experience
               </motion.li>
@@ -87,9 +95,10 @@ const NavBar = () => {
               className="flex items-center gap-1 font-medium cursor-pointer duration-100"
             >
               <motion.li
-                initial={{ y: -10, opacity: 0 }}
+                /* initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7 }}
+                transition={{ duration: 0.7 }} */
+                variants={item}
               >
                 Portfolio
               </motion.li>
@@ -99,24 +108,28 @@ const NavBar = () => {
               className="flex items-center gap-1 font-medium cursor-pointer duration-100"
             >
               <motion.li
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.9 }}
+                // initial={{ y: -10, opacity: 0 }}
+                // animate={{ y: 0, opacity: 1 }}
+                // transition={{ duration: 0.9 }}
+                variants={item}
               >
                 Technologies
               </motion.li>
             </Link>
-          </ul>
-          <a href="/assets/images/logo.png" target="_blank">
-            <motion.button
-              initial={{ y: -10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="px-4 py-2 rounded-md text-textGreen text=[13px] border border-textGreen hover:bg-hoverColor duration-300"
+            <a href="/assets/images/logo.png" target="_blank"
+              className="flex items-center gap-1 font-medium cursor-pointer duration-100"
             >
-              Resume
-            </motion.button>
-          </a>
+              <motion.li
+                // initial={{ y: -10, opacity: 0 }}
+                // animate={{ y: 0, opacity: 1 }}
+                // transition={{ duration: 0.9 }}
+                variants={item}
+              >
+                <button className="px-4 py-2 rounded-md text-textGreen text=[13px] border border-textGreen hover:bg-hoverColor duration-300"
+                >Resume</button>
+              </motion.li>
+            </a>
+          </motion.ul>
         </div>
       </div>
     </div>
