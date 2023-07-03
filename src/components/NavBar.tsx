@@ -16,7 +16,7 @@ const NavBar = () => {
           {
             <Image
               className="relative"
-              src="/assets/images/hs_logo.png"
+              src="./assets/images/hs_logo.png"
               alt="Next.js Logo"
               width={80}
               height={50}
