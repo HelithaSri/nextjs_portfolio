@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { logo, hsLogo } from "/public/assets";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -17,7 +16,7 @@ const NavBar = () => {
           {
             <Image
               className="relative"
-              src={hsLogo}
+              src="/assets/images/hs_logo.png"
               alt="Next.js Logo"
               width={80}
               height={50}
